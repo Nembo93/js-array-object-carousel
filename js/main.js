@@ -66,12 +66,24 @@ for (i = 0; i < images.length; i++){
     imgSmall.src = imgSmallSrc;
 }
 
-// Creare un div nel MainImgBox
+// Creare un tag img nel MainImgBox per l'immagina attiva e un div posizionato in modo assoluto  per titolo
     const imgBig = document.createElement(`img`);
     imgBig.classList.add(`img_small`)
     mainImageBox.appendChild(imgBig);
     imgSmallSrc = images[courrentImgI].image;
     imgBig.src = imgSmallSrc;
+    
+    const imgInfo = document.createElement(`div`);
+    imgInfo.classList.add(`img_info`);
+    mainImageBox.appendChild(imgInfo);
+
+    const imgInfonTitle = document.createElement(`h1`);
+    imgInfo.appendChild(imgInfonTitle);
+    imgInfonTitle.innerHTML = images[courrentImgI].title;
+
+    const imgInfoText = document.createElement(`h4`);
+    imgInfo.appendChild(imgInfoText);
+    imgInfoText.innerHTML = images[courrentImgI].text;
 
     // Creare funzione per scorrere le immagini al click dei bottoni
     upButton.addEventListener(`click`, function(){
@@ -79,11 +91,15 @@ for (i = 0; i < images.length; i++){
             courrentImgI = (images.length - 1);
             imgSmallSrc = images[courrentImgI].image;
             imgBig.src = imgSmallSrc;
+            imgInfonTitle.innerHTML = images[courrentImgI].title;
+            imgInfoText.innerHTML = images[courrentImgI].text;
             console.log(courrentImgI);
         } else if (courrentImgI > 0){
             courrentImgI -= 1;
             imgSmallSrc = images[courrentImgI].image;
             imgBig.src = imgSmallSrc;
+            imgInfonTitle.innerHTML = images[courrentImgI].title;
+            imgInfoText.innerHTML = images[courrentImgI].text;
             console.log(courrentImgI)
         }
         console.log(imgSmallSrc);      
@@ -94,11 +110,15 @@ for (i = 0; i < images.length; i++){
             courrentImgI += 1;
             imgSmallSrc = images[courrentImgI].image;
             imgBig.src = imgSmallSrc;
+            imgInfonTitle.innerHTML = images[courrentImgI].title;
+            imgInfoText.innerHTML = images[courrentImgI].text;
             console.log(courrentImgI);
         } else if (courrentImgI === (images.length - 1)){
             courrentImgI = 0;
             imgSmallSrc = images[courrentImgI].image;
             imgBig.src = imgSmallSrc;
+            imgInfonTitle.innerHTML = images[courrentImgI].title;
+            imgInfoText.innerHTML = images[courrentImgI].text;
             console.log(courrentImgI)
         }
         console.log(imgSmallSrc);       
