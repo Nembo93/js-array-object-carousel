@@ -44,4 +44,12 @@ for (i = 0; i < images.length; i++){
     const boxImg = document.createElement(`div`);
     boxImg.classList.add(`box_img`);
     listImageBox.appendChild(boxImg);
+    const imgSmall = document.createElement(`img`);
+    imgSmall.classList.add(`img_small`)
+    boxImg.appendChild(imgSmall);
+    let imgSmallSrc = `.//` + images[i].image;
+    imgSmall.src = imgSmallSrc;
 }
+
+// let imgSmallSrc = `.//` + images[i][image];
+// console.log(imgSmallSrc);
