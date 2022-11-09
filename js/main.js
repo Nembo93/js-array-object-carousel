@@ -36,7 +36,7 @@ document.body.appendChild(upButton);
 
 // Dichiarare variabile per indirizzo immagine
 let courrentImgI = 0;
-let imgSmallSrc = `.//` + images[courrentImgI].image;
+let imgSmallSrc = images[courrentImgI].image;
 console.log(imgSmallSrc);
 
 console.log(images);
@@ -62,7 +62,7 @@ for (i = 0; i < images.length; i++){
     const imgSmall = document.createElement(`img`);
     imgSmall.classList.add(`img_small`)
     boxImg.appendChild(imgSmall);
-    let imgSmallSrc = `.//` + images[i].image;
+    let imgSmallSrc = images[i].image;
     imgSmall.src = imgSmallSrc;
 }
 
@@ -70,18 +70,20 @@ for (i = 0; i < images.length; i++){
     const imgBig = document.createElement(`img`);
     imgBig.classList.add(`img_small`)
     mainImageBox.appendChild(imgBig);
-    imgSmallSrc = `.//` + images[courrentImgI].image;
+    imgSmallSrc = images[courrentImgI].image;
     imgBig.src = imgSmallSrc;
 
     // Creare funzione per scorrere le immagini al click dei bottoni
     upButton.addEventListener(`click`, function(){
         if(courrentImgI === 0){
             courrentImgI = (images.length - 1);
-            imgSmallSrc = `.//` + images[courrentImgI].image;
+            imgSmallSrc = images[courrentImgI].image;
+            imgBig.src = imgSmallSrc;
             console.log(courrentImgI);
         } else if (courrentImgI > 0){
             courrentImgI -= 1;
-            imgSmallSrc = `.//` + images[courrentImgI].image;
+            imgSmallSrc = images[courrentImgI].image;
+            imgBig.src = imgSmallSrc;
             console.log(courrentImgI)
         }
         console.log(imgSmallSrc);      
@@ -90,11 +92,13 @@ for (i = 0; i < images.length; i++){
     downButton.addEventListener(`click`, function(){
         if(courrentImgI < (images.length - 1)){
             courrentImgI += 1;
-            imgSmallSrc = `.//` + images[courrentImgI].image;
+            imgSmallSrc = images[courrentImgI].image;
+            imgBig.src = imgSmallSrc;
             console.log(courrentImgI);
         } else if (courrentImgI === (images.length - 1)){
             courrentImgI = 0;
-            imgSmallSrc = `.//` + images[courrentImgI].image;
+            imgSmallSrc = images[courrentImgI].image;
+            imgBig.src = imgSmallSrc;
             console.log(courrentImgI)
         }
         console.log(imgSmallSrc);       
