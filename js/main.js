@@ -24,6 +24,21 @@ const images = [
     }
 ];
 
+// Creare tasto down
+const downButton = document.createElement(`button`);
+downButton.innerHTML = `bottone giu`;
+document.body.appendChild(downButton);
+
+// Creare tasto up
+const upButton = document.createElement(`button`);
+upButton.innerHTML = `bottone su`;
+document.body.appendChild(upButton);
+
+// Dichiarare variabile per indirizzo immagine
+let courrentImgI = 0;
+let imgSmallSrc = `.//` + images[courrentImgI].image;
+console.log(imgSmallSrc);
+
 console.log(images);
 // Creare container
 const container = document.createElement(`div`);
@@ -50,6 +65,48 @@ for (i = 0; i < images.length; i++){
     let imgSmallSrc = `.//` + images[i].image;
     imgSmall.src = imgSmallSrc;
 }
+
+// Creare un div nel MainImgBox
+    const imgBig = document.createElement(`img`);
+    imgBig.classList.add(`img_small`)
+    mainImageBox.appendChild(imgBig);
+    imgSmallSrc = `.//` + images[courrentImgI].image;
+    imgBig.src = imgSmallSrc;
+
+    // Creare funzione per scorrere le immagini al click dei bottoni
+    upButton.addEventListener(`click`, function(){
+        if(courrentImgI === 0){
+            courrentImgI = (images.length - 1);
+            imgSmallSrc = `.//` + images[courrentImgI].image;
+            console.log(courrentImgI);
+        } else if (courrentImgI > 0){
+            courrentImgI -= 1;
+            imgSmallSrc = `.//` + images[courrentImgI].image;
+            console.log(courrentImgI)
+        }
+        console.log(imgSmallSrc);      
+    })
+
+    downButton.addEventListener(`click`, function(){
+        if(courrentImgI < (images.length - 1)){
+            courrentImgI += 1;
+            imgSmallSrc = `.//` + images[courrentImgI].image;
+            console.log(courrentImgI);
+        } else if (courrentImgI === (images.length - 1)){
+            courrentImgI = 0;
+            imgSmallSrc = `.//` + images[courrentImgI].image;
+            console.log(courrentImgI)
+        }
+        console.log(imgSmallSrc);       
+    })
+
+    
+
+
+
+
+
+
 
 // let imgSmallSrc = `.//` + images[i][image];
 // console.log(imgSmallSrc);
