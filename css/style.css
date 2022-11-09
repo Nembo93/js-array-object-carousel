@@ -24,6 +24,7 @@
     background-color: lightgreen;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .box_img{
     width: 100%;
@@ -44,4 +45,11 @@
     bottom: 5%;
     right: 5%;
 }
-
+.btn_up{
+    position: absolute;
+    top: 5%;
+}
+.btn_down{
+    position: absolute;
+    bottom: 5%;
+}

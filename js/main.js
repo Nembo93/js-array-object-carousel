@@ -28,7 +28,6 @@ const images = [
 const downButton = document.createElement(`button`);
 downButton.innerHTML = `bottone giu`;
 document.body.appendChild(downButton);
-
 // Creare tasto up
 const upButton = document.createElement(`button`);
 upButton.innerHTML = `bottone su`;
