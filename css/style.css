@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stile per container immagini */
+.container_style{
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    background-color: aqua;
+    display: flex;
+}
+.main_img_box{
+    width: 70%;
+    height: 100%;
+    background-color: pink;
+}
+.list_img_box{
+    width: 30%;
+    height: 100%;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+}
+.box_img{
+    width: 100%;
+    height: calc(100% / 5);
+    border: 1px solid black;
+}
